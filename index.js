@@ -63,6 +63,6 @@ app.use(function (err, req, res, next) {
 });
 
 //start app
-app.listen(config.port, () =>
+app.listen(() =>
   console.log(`Website is now online: Port ${config.port}`)
 );
