@@ -5,7 +5,6 @@ const ejs = require("ejs");
 const app = express();
 const helmet = require("helmet");
 const config = require("./config.json");
-var cookieParser = require("cookie-parser");
 
 //로깅
 require("./logging.js");
@@ -26,19 +25,7 @@ app.use(helmet.noSniff());
 app.use(express.static(__dirname + "/src"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-//cookie
-app.use(cookieParser());
-//session
-var session = require("express-session");
-app.use(
-  session({
-    httpOnly: true,
-    secret: "pandamarket secret session",
-    resave: false,
-    saveUninitialized: true,
-    cookie: {},
-  })
-);
+
 
 //import js for ejs
 var glob = require("glob"),
