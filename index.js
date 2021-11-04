@@ -63,6 +63,6 @@ app.use(function (err, req, res, next) {
 });
 
 //start app
-app.listen(() =>
+app.listen(process.env.PORT || 5000, () =>
   console.log(`Website is now online: Port ${config.port}`)
 );
